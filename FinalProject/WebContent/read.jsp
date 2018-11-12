@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <% 
-	String table = (String) request.getAttribute("table");
+	
 
 %>    
     
