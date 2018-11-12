@@ -37,7 +37,6 @@
 	<input type=text name=message value="" />
 	<br />
 	
-	
 	<input type=submit name= submit value="Submit" />
 
 </form>
