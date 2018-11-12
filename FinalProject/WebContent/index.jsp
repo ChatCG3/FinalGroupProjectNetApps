@@ -8,7 +8,13 @@
 <title>d2 Decoys</title>
 </head>
 <body>
-<h1>d2 Decoys</h1>
+<h1>Welcome To D2 Decoys</h1>
+
+<div class="logo">
+  <img src="/images/cropped-cropped-d2d-logo.jpg">
+</div>
+
+<h3></h3>
 
 <p>
 	<a href="read">Read the database</a>
