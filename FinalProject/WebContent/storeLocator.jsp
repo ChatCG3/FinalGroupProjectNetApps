@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>Store Locator</title>
 </head>
+<h1>
+Store Locator
+</h1>
 <body>
 Enter your zip code.
 </body>
