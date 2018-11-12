@@ -7,6 +7,6 @@
 <title>Store Locator</title>
 </head>
 <body>
-Enter your zip code
+Enter your zip code.
 </body>
 </html>
