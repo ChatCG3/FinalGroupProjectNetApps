@@ -23,6 +23,9 @@ String table = (String) request.getAttribute("table");
 <br />
 <a href="registration.jsp">Register a customer</a>
 
+<a href="index.jsp">Return to Home</a>
+
+
 
 </body>
 </html>

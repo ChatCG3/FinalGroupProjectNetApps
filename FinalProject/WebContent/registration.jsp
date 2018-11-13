@@ -34,8 +34,9 @@
 	
 	<input type=submit name=register value="Register" />
 
-
 </form>
+
+<a href="index.jsp">Return to Home</a>
 
 
 </body>

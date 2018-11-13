@@ -51,7 +51,7 @@ public class RegisterCustomerServlet extends HttpServlet {
 		customer.setPassword(password);
 		
 		// set up an addQuery object
-		AddCustomer ac = new AddCustomer("customers", "root", "toortoor");
+		AddCustomer ac = new AddCustomer("naproject", "root", "toortoor");
 		
 		// pass the book to addQuery to add to the database
 		ac.doAdd(customer);

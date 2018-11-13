@@ -42,6 +42,8 @@
 
 </form>
 
+<a href="index.jsp">Return to Home</a>
+
 
 </body>
 </html>
