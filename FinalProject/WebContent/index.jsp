@@ -20,5 +20,9 @@
 	<a href="read">Read the database</a>
 </p>
 
+<p>
+	<a href="contact.jsp">Contact Us</a>
+</p>
+
 </body>
 </html>

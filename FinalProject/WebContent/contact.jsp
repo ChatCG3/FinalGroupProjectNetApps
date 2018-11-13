@@ -23,7 +23,7 @@
 	<br />
 	
 	<label>
-		email:
+		Email:
 	</label>
 	<input type=text name=email value="" />
 	<br />
