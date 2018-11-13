@@ -11,14 +11,19 @@
 <h1>Welcome To D2 Decoys</h1>
 
 <div class="logo">
-  <img src="/images/cropped-cropped-d2d-logo.jpg">
+  <img src="images/cropped-cropped-d2d-logo.jpg">
 </div>
 
 <h3></h3>
 
 <p>
-	<a href="read">Read the database</a>
+	<a href="read">Read Products</a>
 </p>
+
+<p>
+	<a href="readCustomer">Read Customers</a>
+</p>
+
 
 <p>
 	<a href="register">Registration</a>

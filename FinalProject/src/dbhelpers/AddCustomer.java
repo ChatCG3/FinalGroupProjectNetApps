@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import model.Customer;
-import model.Product;
+
 
 /**
  * @author codygreen
@@ -33,7 +33,7 @@ public class AddCustomer {
 	}
 	
 	public void doAdd(Customer customer) {
-		String query = "insert into customer (customerID, email, password) values (?, ?, ?)";
+		String query = "insert into customers (id, username, password) values (?, ?, ?)";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);

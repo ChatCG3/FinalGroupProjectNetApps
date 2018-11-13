@@ -51,7 +51,7 @@ public class ReadCustomerServlet extends HttpServlet {
 		
 		// pass execution control to read.jsp along with the table
 		request.setAttribute("table", table);
-		String url = "/read.jsp";
+		String url = "/readCustomer.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

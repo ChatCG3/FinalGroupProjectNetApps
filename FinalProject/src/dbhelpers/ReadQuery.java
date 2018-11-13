@@ -55,7 +55,7 @@ public class ReadQuery {
 	}
 	
 	public void doReadCustomer() {
-		String query = "select * from customer";
+		String query = "select * from customers";
 		
 		try {
 			PreparedStatement ps = this.connection.prepareStatement(query);
@@ -100,7 +100,7 @@ public class ReadQuery {
 				table +=product.getSize();
 				table +="</td>";
 				table +="<td>";
-					table +="<a href=update?sku=" + product.getProductID() + ">update</a> <a href=delete?sku=" + product.getProductID() + ">delete</a>";
+					table +="<a href=update?id=" + product.getProductID() + ">update</a> <a href=delete?id=" + product.getProductID() + ">delete</a>";
 				table +="</td>";
 				table +="</tr>";
 				
@@ -123,8 +123,8 @@ public class ReadQuery {
 		try {
 			while(this.results.next()) {
 				Customer customer = new Customer();
-				customer.setId(this.results.getInt("customerID"));
-				customer.setUsername(this.results.getString("email"));
+				customer.setId(this.results.getInt("id"));
+				customer.setUsername(this.results.getString("username"));
 				customer.setPassword(this.results.getString("password"));
 				
 				table +="<tr>";
