@@ -7,6 +7,7 @@
 </head>
 <body>
 
+
 <h1>Registration</h1>
 
 	<form name=registrationForm action=register method=post >
