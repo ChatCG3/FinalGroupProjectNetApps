@@ -21,6 +21,10 @@
 </p>
 
 <p>
+	<a href="register">Registration</a>
+</p>
+
+<p>
 	<a href="contact.jsp">Contact Us</a>
 </p>
 

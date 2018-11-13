@@ -12,21 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 import dbhelpers.ReadQuery;
 
 /**
- * Servlet implementation class ReadServlet
+ * Servlet implementation class ReadCustomerServlet
  */
 @WebServlet(
-		description = "Controller for reading the product", 
+		description = "Controller for reading the customer", 
 		urlPatterns = { 
-				"/ReadServlet", 
-				"/read"
+				"/ReadCustomerServlet", 
+				"/readCustomer"
 		})
-public class ReadServlet extends HttpServlet {
+public class ReadCustomerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReadServlet() {
+    public ReadCustomerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,8 +46,8 @@ public class ReadServlet extends HttpServlet {
 		ReadQuery rq = new ReadQuery("naproject", "root", "toortoor");
 		
 		// Get the html table from the ReadQuery object
-		rq.doReadProduct();
-		String table = rq.getProductTable();
+		rq.doReadCustomer();
+		String table = rq.getCustomerTable();
 		
 		// pass execution control to read.jsp along with the table
 		request.setAttribute("table", table);
@@ -57,5 +57,6 @@ public class ReadServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 				
 	}
-
 }
+
+

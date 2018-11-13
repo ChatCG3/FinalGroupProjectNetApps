@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +12,18 @@
 
 <h1>Registration</h1>
 
-	<form name=registrationForm action=register method=post >
+	<form name=registrationForm action=registerCustomer method=get >
 	
 	<label>
-		Email Address:
+		ID:
 	</label>
-	<input type=text name=email placeholder="Email Address" required/>
+	<input type=text name=id value=""/>
+	<br />
+	
+	<label>
+		Username:
+	</label>
+	<input type=text name=username placeholder="Username" required/>
 	<br />
 	
 	<label>

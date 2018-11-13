@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Product;
+import model.Customer;
 
 
 
@@ -41,7 +42,7 @@ public class ReadQuery {
 		}
 	}
 	
-	public void doRead() {
+	public void doReadProduct() {
 		String query = "select * from product";
 		
 		try {
@@ -53,7 +54,19 @@ public class ReadQuery {
 		}
 	}
 	
-	public String getHTMLTable() {
+	public void doReadCustomer() {
+		String query = "select * from customer";
+		
+		try {
+			PreparedStatement ps = this.connection.prepareStatement(query);
+			this.results = ps.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public String getProductTable() {
 		String table = "";
 		table += "<table border=1>";
 		
@@ -88,6 +101,44 @@ public class ReadQuery {
 				table +="</td>";
 				table +="<td>";
 					table +="<a href=update?sku=" + product.getProductID() + ">update</a> <a href=delete?sku=" + product.getProductID() + ">delete</a>";
+				table +="</td>";
+				table +="</tr>";
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		table += "</table>";
+
+		
+		return table;
+	}
+	
+	public String getCustomerTable() {
+		String table = "";
+		table += "<table border=1>";
+		
+		try {
+			while(this.results.next()) {
+				Customer customer = new Customer();
+				customer.setId(this.results.getInt("customerID"));
+				customer.setUsername(this.results.getString("email"));
+				customer.setPassword(this.results.getString("password"));
+				
+				table +="<tr>";
+				table +="<td>";
+				table +=customer.getId();
+				table +="</td>";
+				table +="<td>";
+				table +=customer.getUsername();
+				table +="</td>";
+				table +="<td>";
+				table +=customer.getPassword();
+				table +="</td>";
+				table +="<td>";
+					table +="<a href=update?id=" + customer.getId() + ">update</a> <a href=delete?id=" + customer.getId() + ">delete</a>";
 				table +="</td>";
 				table +="</tr>";
 				
