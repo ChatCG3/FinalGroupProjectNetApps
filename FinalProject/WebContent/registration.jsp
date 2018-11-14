@@ -23,7 +23,7 @@
 	<label>
 		Password (greater than 8 characters):
 	</label>
-	<input type=password name=password placeholder="Password" required/>
+	<input type=text name=password placeholder="Password" required/>
 	<br />
 	
 	<input type=submit name=register value="Register" />

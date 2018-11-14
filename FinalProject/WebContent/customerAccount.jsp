@@ -13,6 +13,10 @@
 Click <a href="Login?logout=true">here</a> to log back out.
 </p>
 
+<p>To return to the Home Page<br>
+Click <a href="index.jsp">here</a> to go back to Home.
+</p>
+
 
 </body>
 </html>
