@@ -30,6 +30,10 @@
 </p>
 
 <p>
+	<a href="login.jsp">Log In</a>
+</p>
+
+<p>
 	<a href="contact.jsp">Contact Us</a>
 </p>
 
