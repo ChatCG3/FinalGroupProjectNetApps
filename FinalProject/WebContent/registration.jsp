@@ -27,7 +27,7 @@
 	<br />
 	
 	<label>
-		Password:
+		Password (greater than 8 characters):
 	</label>
 	<input type=password name=password placeholder="Password" required/>
 	<br />
