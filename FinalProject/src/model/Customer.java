@@ -14,7 +14,7 @@ public class Customer {
 	 * default constructor
 	 */
 	public Customer() {
-		this.id = 0;
+		this.id = 1;
 		this.username = "";
 		this.password = "";
 	}
@@ -71,6 +71,14 @@ public class Customer {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", username=" + username + ", password=" + password + "]";
 	}
 }
 

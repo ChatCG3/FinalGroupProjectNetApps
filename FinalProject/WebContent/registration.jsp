@@ -15,12 +15,6 @@
 	<form name=registrationForm action=registerCustomer method=get >
 	
 	<label>
-		ID:
-	</label>
-	<input type=text name=id value=""/>
-	<br />
-	
-	<label>
 		Username:
 	</label>
 	<input type=text name=username placeholder="Username" required/>

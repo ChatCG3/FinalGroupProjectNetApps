@@ -129,9 +129,6 @@ public class ReadQuery {
 				
 				table +="<tr>";
 				table +="<td>";
-				table +=customer.getId();
-				table +="</td>";
-				table +="<td>";
 				table +=customer.getUsername();
 				table +="</td>";
 				table +="<td>";

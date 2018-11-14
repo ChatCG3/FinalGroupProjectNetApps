@@ -33,14 +33,13 @@ public class AddCustomer {
 	}
 	
 	public void doAdd(Customer customer) {
-		String query = "insert into customers (id, username, password) values (?, ?, ?)";
+		String query = "insert into customers (username, password) values (?, ?)";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
 			
-			ps.setInt(1, customer.getId());
-			ps.setString(2, customer.getUsername());
-			ps.setString(3, customer.getPassword());
+			ps.setString(1, customer.getUsername());
+			ps.setString(2, customer.getPassword());
 			
 			ps.executeUpdate();
 		} catch (SQLException e) {

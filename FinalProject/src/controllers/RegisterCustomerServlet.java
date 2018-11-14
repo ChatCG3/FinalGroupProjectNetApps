@@ -40,13 +40,12 @@ public class RegisterCustomerServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get the data
-		int id = Integer.parseInt(request.getParameter("id"));
+		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
 		// set up a product object
 		Customer customer = new Customer();
-		customer.setId(id);
 		customer.setUsername(username);
 		customer.setPassword(password);
 		
