@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dbhelpers.CustomerHelper;
-import dbhelpers.ReadQuery;
 import model.Customer;
-import utilities.PasswordService;
+
 
 /**
  * Servlet implementation class LoginController
@@ -77,13 +76,11 @@ public class LoginController extends HttpServlet {
 			String password = request.getParameter("password");
 
 			//encrypt the password to check against what's stored in DB
-			PasswordService pws = new PasswordService();
-			String encryptedPass = pws.encrypt(password);
 			
 			//create a user helper class to make database calls, and call authenticate user method
 			// Create a ReadQuery helper object
 			CustomerHelper ch = new CustomerHelper("naproject", "root", "toortoor");
-			Customer customer = ch.authenticateCustomer(username, encryptedPass);
+			Customer customer = ch.authenticateCustomer(username, password);
 
 			//we've found a user that matches the credentials
 			if(customer != null){
@@ -91,7 +88,7 @@ public class LoginController extends HttpServlet {
 				session.invalidate();
 				session=request.getSession(true);
 				session.setAttribute("customer", customer);
-				url="CustomerAccount.jsp";
+				url="customerAccount.jsp";
 			}
 			// user doesn't exist, redirect to previous page and show error
 			else{

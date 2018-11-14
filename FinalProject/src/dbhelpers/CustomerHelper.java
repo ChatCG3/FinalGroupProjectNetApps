@@ -20,12 +20,16 @@ public class CustomerHelper {
 	private Connection connection;
 	private ResultSet results;
 	
+	Customer customer = new Customer();
+	private int id;
+	
 	/**
 	 * Constructor which makes a connection
 	 */
 	public CustomerHelper(String dbName, String uname, String pwd) {
 		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-
+		this.id = id;
+		
 		// set up the driver
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();

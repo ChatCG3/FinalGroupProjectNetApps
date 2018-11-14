@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form id="loginForm" action="Login" method="POST">
+<form id="loginForm" action="Login" method="post">
 	<h1>Log In</h1>
 	<input type="text" name="username" placeholder="Username" required><br>
 	<input type="password" name="password" placeholder ="Password" required><br>
