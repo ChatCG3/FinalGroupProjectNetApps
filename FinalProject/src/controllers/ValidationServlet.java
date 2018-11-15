@@ -32,11 +32,11 @@ public class ValidationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// get input and validate
 		String msg = "";
-		String url = "/page2.jsp";
+		String url = "/registerCustomer";
 		// username <= 15 characters
 		String username = request.getParameter("username");
 		if (!Validator.isUsername(username)){
-			msg += "The name has not been entered.<br />";
+			msg += "A username has not been entered.<br />";
 			url = "/inputErrors.jsp";
 		} else {
 		    request.setAttribute("username", username);
@@ -44,10 +44,10 @@ public class ValidationServlet extends HttpServlet {
 		
 		String password = request.getParameter("password");
 		if (!Validator.isPassword(password)){
-			msg += "The password has not been entered.<br />";
+			msg += "A password has not been entered.<br />";
 			url = "/inputErrors.jsp";
 		} else if (!Validator.isLongPassword(password)){
-			msg += "The name should be greater than 8 characters.<br />";
+			msg += "Your password should be greater than 8 characters.<br />";
 			url = "/inputErrors.jsp";
 		} else {
 		    request.setAttribute("password", password);
