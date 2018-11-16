@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Product;
-import model.Customer;
+import model.*;
+
 
 
 
@@ -19,6 +19,9 @@ public class ReadQuery {
 	
 	private Connection connection;
 	private ResultSet results;
+	
+	private Product product = new Product();
+	private String code;
 	
 	public ReadQuery(String dbName, String uname, String pwd) {
 		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -66,6 +69,39 @@ public class ReadQuery {
 		}
 	}
 	
+	public Product doReadProductRecord(String code) {
+		
+		
+		String query = "select * from product where code= ?";
+		
+		try {
+			PreparedStatement ps = this.connection.prepareStatement(query);
+			
+			ps.setString(1, this.code);
+
+			
+			this.results = ps.executeQuery();
+			
+			this.results.next();
+			
+			product.setProductID(this.results.getInt("productID"));
+			product.setDescription(this.results.getString("description"));
+			product.setImageID(this.results.getString("imageID"));
+			product.setPrice(this.results.getDouble("price"));
+			product.setCode(this.results.getString("code"));
+
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return this.product;
+		
+		
+	}
+
+	
 	public String getProductTable() {
 		String table = "";
 		table += "<table border=1>";
@@ -75,7 +111,11 @@ public class ReadQuery {
 				Product product = new Product();
 				product.setProductID(this.results.getInt("productID"));
 				product.setDescription(this.results.getString("description"));
-				product.setImageID(this.results.getInt("imageID"));
+				product.setImageID(this.results.getString("imageID"));
+				product.setPrice(this.results.getDouble("price"));
+				product.setCode(this.results.getString("code"));
+
+
 				
 				table +="<tr>";
 				table +="<td>";
@@ -88,7 +128,13 @@ public class ReadQuery {
 				table +=product.getImageID();
 				table +="</td>";
 				table +="<td>";
-					table +="<a href=Add To Cart?id=" + product.getProductID() + ">Add To Cart</a>";
+				table +=product.getPrice();
+				table +="</td>";
+				table +="<td>";
+				table +=product.getCode();
+				table +="</td>";
+				table +="<td>";
+					table +="<a href=cart?id=" + product.getProductID() + ">Add To Cart</a>";
 				table +="</td>";
 				table +="</tr>";
 				
@@ -103,6 +149,8 @@ public class ReadQuery {
 		
 		return table;
 	}
+	
+	
 	
 	public String getCustomerTable() {
 		String table = "";

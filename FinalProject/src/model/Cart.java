@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.CartItem;
@@ -11,13 +12,13 @@ public class Cart implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ArrayList<CartItem> items;
+	private ArrayList<Product> items;
 
     public Cart() {
-        items = new ArrayList<CartItem>();
+        items = new ArrayList<Product>();
     }
 
-    public ArrayList<CartItem> getItems() {
+    public ArrayList<Product> getItems() {
         return items;
     }
 
@@ -25,28 +26,71 @@ public class Cart implements Serializable{
         return items.size();
     }
 
-    public void addItem(CartItem item) {
-        String code = item.getProduct().getCode();
-        int quantity = item.getQuantity();
+    public void addItem(Product item) {
+        String code = item.getCode();
         for (int i = 0; i < items.size(); i++) {
-            CartItem cartItem = items.get(i);
-            if (cartItem.getProduct().getCode().equals(code)) {
-                cartItem.setQuantity(quantity);
+            Product cartItem = items.get(i);
+            if (cartItem.getCode().equals(code)) {
                 return;
             }
         }
         items.add(item);
     }
 
-    public void removeItem(CartItem item) {
-        String code = item.getProduct().getCode();
+    public void removeItem(Product item) {
+        String code = item.getCode();
         for (int i = 0; i < items.size(); i++) {
-            CartItem cartItem = items.get(i);
-            if (cartItem.getProduct().getCode().equals(code)) {
+            Product cartItem = items.get(i);
+            if (cartItem.getCode().equals(code)) {
                 items.remove(i);
                 return;
             }
         }
     }
+    
+    public String getCartTable() {
+    	
+    	int size = items.size();
+    	String table = "";
+
+    	for (int row = 0; row < items.size() / 3; row++) {
+    		
+    		Product item = items.get(row);
+    		
+			table += "<table border=1>";
+			
+			
+			
+			table +="<tr>";
+			table +="<td>";
+			table +=item.getProductID();
+			table +="</td>";
+			table +="<td>";
+			table +=item.getDescription();
+			table +="</td>";
+			table +="<td>";
+			table +=item.getImageID();
+			table +="</td>";
+			table +="<td>";
+			table +=item.getPrice();
+			table +="</td>";
+			table +="<td>";
+			table +=item.getCode();
+			table +="</td>";
+			table +="</tr>";
+			
+			table += "</table>";
+
+    	}
+		return table;
+    }
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Cart [items=" + items + "]";
+	}
 
 }

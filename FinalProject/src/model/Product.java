@@ -8,7 +8,7 @@ public class Product {
 	
 	private int productID;
 	private String description;
-	private int imageID;
+	private String imageID;
 	private double price;
 	private String code;
 	
@@ -18,7 +18,7 @@ public class Product {
 	public Product() {
 		this.productID = 1234;
 		this.description = "";
-		this.imageID = 0;
+		this.imageID = "";
 		this.price = 0.0;
 		this.code = "";
 	}
@@ -31,7 +31,7 @@ public class Product {
 	 * @param imageID
 	 * @param size
 	 */
-	public Product(int productID, String description, int imageID, double price, String code) {
+	public Product(int productID, String description, String imageID, double price, String code) {
 		this.productID = productID;
 		this.description = description;
 		this.imageID = imageID;
@@ -98,21 +98,29 @@ public class Product {
 	/**
 	 * @return the imageID
 	 */
-	public int getImageID() {
+	public String getImageID() {
 		return imageID;
 	}
 
 	/**
 	 * @param imageID the imageID to set
 	 */
-	public void setImageID(int imageID) {
+	public void setImageID(String imageID) {
 		this.imageID = imageID;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Product [productID=" + productID + ", description=" + description + ", imageID=" + imageID + ", price="
+				+ price + ", code=" + code + "]";
 	}
 
 	/**
 	 * @return the size
 	 */
-	
 	
 	
 	

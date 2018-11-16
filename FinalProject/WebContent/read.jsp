@@ -3,7 +3,6 @@
     
 
 <%
-String welcome = (String) request.getAttribute("welcome");
 String table = (String) request.getAttribute("table");
 
 %>
@@ -13,27 +12,22 @@ String table = (String) request.getAttribute("table");
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="styles.css" type="text/css">
 <title>Shop Products</title>
 </head>
 <body>
 
 <h1>Shop Products</h1>
-<table>
-    <tr>
-        <th>Description</th>
-        <th class="right">Price</th>
-        <th>&nbsp;</th>
-    </tr>
-	<tr>
-        <td>86 (the band) - True Life Songs and Pictures</td>
-        <td class="right">$14.95</td>
-        <td><form action="cart" method="post">
-                <input type="hidden" name="productCode" value="8601">
-                <input type="submit" value="Add To Cart">
-            </form></td>
-    </tr>
-</table>
+
+<%= table %>
+<br />
+<p>
+	<a href="cart.jsp">See your Cart</a>
+</p>
+
+<p>
+	<a href="index.jsp">Return home</a>
+</p>
 
 
 
