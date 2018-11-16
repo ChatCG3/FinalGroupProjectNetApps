@@ -15,8 +15,7 @@ import dbhelpers.*;
  * Servlet implementation class CartController
  */
 @WebServlet(urlPatterns = { 
-				"/CartController", 
-				"/cart"
+				"/CartController"
 		})
 public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
