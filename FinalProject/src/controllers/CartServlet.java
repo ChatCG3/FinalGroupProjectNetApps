@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dbhelpers.ReadQuery;
 import model.Cart;
 import model.CartItem;
 import model.Product;
@@ -74,10 +75,9 @@ public class CartServlet extends HttpServlet {
                 quantity = 1;
             }
 
-            
 
             CartItem cartItem = new CartItem();
-            cartItem.setProduct(product);
+//            cartItem.setProduct(product);
             cartItem.setQuantity(quantity);
             if (quantity > 0) {
                 cart.addItem(cartItem);
