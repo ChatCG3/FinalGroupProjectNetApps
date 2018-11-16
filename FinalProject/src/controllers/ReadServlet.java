@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import dbhelpers.ReadQuery;
+
 
 /**
  * Servlet implementation class ReadServlet
@@ -42,6 +44,12 @@ public class ReadServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		String username = request.getParameter("username");
+		String welcome = "Hello, " + username;
+		request.setAttribute("welcome", welcome);
+		
 		// Create a ReadQuery helper object
 		ReadQuery rq = new ReadQuery("naproject", "root", "toortoor");
 		

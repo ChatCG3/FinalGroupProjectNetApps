@@ -100,7 +100,7 @@ public class ReadQuery {
 				table +=product.getSize();
 				table +="</td>";
 				table +="<td>";
-					table +="<a href=update?id=" + product.getProductID() + ">update</a> <a href=delete?id=" + product.getProductID() + ">delete</a>";
+					table +="<a href=Add To Cart?id=" + product.getProductID() + ">Add To Cart</a>";
 				table +="</td>";
 				table +="</tr>";
 				

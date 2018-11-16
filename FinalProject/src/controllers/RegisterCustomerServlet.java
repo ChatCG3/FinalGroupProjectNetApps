@@ -56,7 +56,7 @@ public class RegisterCustomerServlet extends HttpServlet {
 		ac.doAdd(customer);
 		
 		// pass execution control to the ReadCustomerServlet
-		String url = "/readCustomer";
+		String url = "/read";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

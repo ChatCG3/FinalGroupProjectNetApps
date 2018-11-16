@@ -3,6 +3,7 @@
     
 
 <%
+String welcome = (String) request.getAttribute("welcome");
 String table = (String) request.getAttribute("table");
 
 %>
@@ -13,11 +14,13 @@ String table = (String) request.getAttribute("table");
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="style.css" type="text/css">
-<title>Products</title>
+<title>Shop Products</title>
 </head>
 <body>
 
-<h1>Products</h1>
+<h1>Shop Products</h1>
+<%= welcome %>
+<br />
 
 <%= table %>
 <br />
