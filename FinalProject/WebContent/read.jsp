@@ -22,7 +22,7 @@ String table = (String) request.getAttribute("table");
 <%= table %>
 <br />
 <p>
-	<a href="cart.jsp">See your Cart</a>
+	<a href="cart">See your Cart</a>
 </p>
 
 <p>

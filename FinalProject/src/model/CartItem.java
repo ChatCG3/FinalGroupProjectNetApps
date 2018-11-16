@@ -1,11 +1,13 @@
 package model;
 
-import java.io.Serializable;
 import java.text.NumberFormat;
 
-import model.Product;
 
-public class CartItem implements Serializable{
+public class CartItem {
+	
+	/**
+	 * 
+	 */
 	
 	private int productID;
 	private String description;

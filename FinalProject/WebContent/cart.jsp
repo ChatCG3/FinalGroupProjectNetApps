@@ -29,20 +29,6 @@ String table = (String) request.getAttribute("table");
 	<a href="index.jsp">Return home</a>
 </p>
 
-
-
-
-
-
-
-
-<%-- <%= welcome %> --%>
-<!-- <br /> -->
-
-<%-- <%= table %> --%>
-<!-- <br /> -->
-<!-- <a href="add">Add a product</a> -->
-
 <a href="index.jsp">Return to Home</a>
 
 
