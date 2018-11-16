@@ -17,7 +17,8 @@
 	    <td colspan="3">
 	        <table cellspacing="0" cellpadding="0" id="header">
 	        <tr>
-	            <td><img src="images/cropped-cropped-d2d-logo.jpg" align="left" height="150"></td>
+	            <td><a href="index.jsp" class="custom-logo-link" rel="home" itemprop="url">
+	            <img src="images/cropped-cropped-d2d-logo.jpg" align="left" height="150"></td></a>
 	               <td> <p align="right">  <br><font face="Times New Roman" size="6">&nbsp;&nbsp;&nbsp;&nbsp;
 	               D2Decoys</font><br><font face="Times New Roman" size="4">Contact Us</font> </p>
  </td>
