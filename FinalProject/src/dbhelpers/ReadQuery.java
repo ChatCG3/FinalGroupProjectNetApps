@@ -74,30 +74,18 @@ public class ReadQuery {
 			while(this.results.next()) {
 				Product product = new Product();
 				product.setProductID(this.results.getInt("productID"));
-				product.setColor(this.results.getString("color"));
-				product.setNumInStock(this.results.getInt("numInStock"));
 				product.setDescription(this.results.getString("description"));
 				product.setImageID(this.results.getInt("imageID"));
-				product.setSize(this.results.getString("size"));
 				
 				table +="<tr>";
 				table +="<td>";
 				table +=product.getProductID();
 				table +="</td>";
 				table +="<td>";
-				table +=product.getColor();
-				table +="</td>";
-				table +="<td>";
-				table +=product.getNumInStock();
-				table +="</td>";
-				table +="<td>";
 				table +=product.getDescription();
 				table +="</td>";
 				table +="<td>";
 				table +=product.getImageID();
-				table +="</td>";
-				table +="<td>";
-				table +=product.getSize();
 				table +="</td>";
 				table +="<td>";
 					table +="<a href=Add To Cart?id=" + product.getProductID() + ">Add To Cart</a>";
