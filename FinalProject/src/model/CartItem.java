@@ -132,8 +132,11 @@ public class CartItem {
         return quantity;
     }
 
+    public void setTotal(double total) {
+    	this.total = price * quantity;
+
+    }
     public double getTotal() {
-        double total = price * quantity;
         return total;
     }
 

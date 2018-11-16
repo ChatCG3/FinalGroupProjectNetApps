@@ -21,9 +21,13 @@ String table = (String) request.getAttribute("table");
 
 <%= table %>
 <br />
-<p>
-	<a href="cart">See your Cart</a>
-</p>
+
+	<form class="form" action=CartController method="get" name="viewCart">
+	<p>
+		<input class="submit" type="submit" name="cart" value="Cart" />
+	</p>
+		</form>
+
 
 <p>
 	<a href="index.jsp">Return home</a>
