@@ -69,6 +69,18 @@ public class ReadQuery {
 		}
 	}
 	
+	public void doReadCart() {
+		String query = "select * from cart";
+		
+		try {
+			PreparedStatement ps = this.connection.prepareStatement(query);
+			this.results = ps.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public Product doReadProductRecord(String code) {
 		
 		
@@ -135,6 +147,54 @@ public class ReadQuery {
 				table +="</td>";
 				table +="<td>";
 					table +="<a href=cart?id=" + product.getProductID() + ">Add To Cart</a>";
+				table +="</td>";
+				table +="</tr>";
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		table += "</table>";
+
+		
+		return table;
+	}
+	
+	public String getCartTable() {
+		String table = "";
+		table += "<table border=1>";
+		
+		try {
+			while(this.results.next()) {
+				CartItem cartItem = new CartItem();
+				cartItem.setProductID(this.results.getInt("productID"));
+				cartItem.setDescription(this.results.getString("description"));
+				cartItem.setImageID(this.results.getString("imageID"));
+				cartItem.setPrice(this.results.getDouble("price"));
+				cartItem.setCode(this.results.getString("code"));
+
+
+				
+				table +="<tr>";
+				table +="<td>";
+				table +=cartItem.getProductID();
+				table +="</td>";
+				table +="<td>";
+				table +=cartItem.getDescription();
+				table +="</td>";
+				table +="<td>";
+				table +=cartItem.getImageID();
+				table +="</td>";
+				table +="<td>";
+				table +=cartItem.getPrice();
+				table +="</td>";
+				table +="<td>";
+				table +=cartItem.getCode();
+				table +="</td>";
+				table +="<td>";
+					table +="<a href=delete?id=" + cartItem.getProductID() + ">Remove from Cart</a>";
 				table +="</td>";
 				table +="</tr>";
 				
