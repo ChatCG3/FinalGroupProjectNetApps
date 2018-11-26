@@ -8,31 +8,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
-import dbhelpers.ReadQuery;
-
-
 /**
- * Servlet implementation class ReadServlet
+ * Servlet implementation class AddCartFormServlet
  */
-@WebServlet(
-		description = "Controller for reading the product", 
-		urlPatterns = { 
-				"/ReadServlet", 
-				"/read"
-		})
-public class ReadServlet extends HttpServlet {
+@WebServlet({ "/AddCartFormServlet", "/add" })
+public class AddCartFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReadServlet() {
+    public AddCartFormServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -44,23 +37,9 @@ public class ReadServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-		// Create a ReadQuery helper object
-		ReadQuery rq = new ReadQuery("naproject", "root", "toortoor");
-		
-		// Get the html table from the ReadQuery object
-		rq.doReadProduct();
-		String table = rq.getProductTable();
-		
-		// pass execution control to read.jsp along with the table
-		request.setAttribute("table", table);
-		String url = "/read.jsp";
+		String url = "/addCartForm.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-				
 	}
-
 }

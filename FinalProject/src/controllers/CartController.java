@@ -9,26 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import dbhelpers.ReadQuery;
-
+import dbhelpers.*;
 
 /**
- * Servlet implementation class ReadServlet
+ * Servlet implementation class CartController
  */
-@WebServlet(
-		description = "Controller for reading the product", 
-		urlPatterns = { 
-				"/ReadServlet", 
-				"/read"
+@WebServlet(urlPatterns = { 
+				"/CartController"
 		})
-public class ReadServlet extends HttpServlet {
+public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReadServlet() {
+    public CartController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,23 +39,19 @@ public class ReadServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
 		// Create a ReadQuery helper object
-		ReadQuery rq = new ReadQuery("naproject", "root", "toortoor");
+		ReadQuery rc = new ReadQuery("naproject", "root", "toortoor");
 		
 		// Get the html table from the ReadQuery object
-		rq.doReadProduct();
-		String table = rq.getProductTable();
+		rc.doReadCart();
+		String table = rc.getCartTable();
 		
 		// pass execution control to read.jsp along with the table
 		request.setAttribute("table", table);
-		String url = "/read.jsp";
+		String url = "/cart.jsp";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-				
 	}
 
 }

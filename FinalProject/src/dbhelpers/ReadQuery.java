@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Product;
-import model.Customer;
+import model.*;
+
 
 
 
@@ -19,6 +19,9 @@ public class ReadQuery {
 	
 	private Connection connection;
 	private ResultSet results;
+	
+	private Product product = new Product();
+	private String code;
 	
 	public ReadQuery(String dbName, String uname, String pwd) {
 		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -66,6 +69,51 @@ public class ReadQuery {
 		}
 	}
 	
+	public void doReadCart() {
+		String query = "select * from cart";
+		
+		try {
+			PreparedStatement ps = this.connection.prepareStatement(query);
+			this.results = ps.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public Product doReadProductRecord(String code) {
+		
+		
+		String query = "select * from product where code= ?";
+		
+		try {
+			PreparedStatement ps = this.connection.prepareStatement(query);
+			
+			ps.setString(1, this.code);
+
+			
+			this.results = ps.executeQuery();
+			
+			this.results.next();
+			
+			product.setProductID(this.results.getInt("productID"));
+			product.setDescription(this.results.getString("description"));
+			product.setImageID(this.results.getString("imageID"));
+			product.setPrice(this.results.getDouble("price"));
+			product.setCode(this.results.getString("code"));
+
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return this.product;
+		
+		
+	}
+
+	
 	public String getProductTable() {
 		String table = "";
 		table += "<table border=1>";
@@ -74,21 +122,16 @@ public class ReadQuery {
 			while(this.results.next()) {
 				Product product = new Product();
 				product.setProductID(this.results.getInt("productID"));
-				product.setColor(this.results.getString("color"));
-				product.setNumInStock(this.results.getInt("numInStock"));
 				product.setDescription(this.results.getString("description"));
-				product.setImageID(this.results.getInt("imageID"));
-				product.setSize(this.results.getString("size"));
+				product.setImageID(this.results.getString("imageID"));
+				product.setPrice(this.results.getDouble("price"));
+				product.setCode(this.results.getString("code"));
+
+
 				
 				table +="<tr>";
 				table +="<td>";
 				table +=product.getProductID();
-				table +="</td>";
-				table +="<td>";
-				table +=product.getColor();
-				table +="</td>";
-				table +="<td>";
-				table +=product.getNumInStock();
 				table +="</td>";
 				table +="<td>";
 				table +=product.getDescription();
@@ -97,10 +140,13 @@ public class ReadQuery {
 				table +=product.getImageID();
 				table +="</td>";
 				table +="<td>";
-				table +=product.getSize();
+				table +=product.getPrice();
 				table +="</td>";
 				table +="<td>";
-					table +="<a href=Add To Cart?id=" + product.getProductID() + ">Add To Cart</a>";
+				table +=product.getCode();
+				table +="</td>";
+				table +="<td>";
+					table +="<a href=addToCart?productID=" + product.getProductID() + ">Add to Cart</a>";
 				table +="</td>";
 				table +="</tr>";
 				
@@ -115,6 +161,56 @@ public class ReadQuery {
 		
 		return table;
 	}
+	
+	public String getCartTable() {
+		String table = "";
+		table += "<table border=1>";
+		
+		try {
+			while(this.results.next()) {
+				CartItem cartItem = new CartItem();
+				cartItem.setProductID(this.results.getInt("productID"));
+				cartItem.setDescription(this.results.getString("description"));
+				cartItem.setImageID(this.results.getString("imageID"));
+				cartItem.setPrice(this.results.getDouble("price"));
+				cartItem.setCode(this.results.getString("code"));
+
+
+				
+				table +="<tr>";
+				table +="<td>";
+				table +=cartItem.getProductID();
+				table +="</td>";
+				table +="<td>";
+				table +=cartItem.getDescription();
+				table +="</td>";
+				table +="<td>";
+				table +=cartItem.getImageID();
+				table +="</td>";
+				table +="<td>";
+				table +=cartItem.getPrice();
+				table +="</td>";
+				table +="<td>";
+				table +=cartItem.getCode();
+				table +="</td>";
+				table +="<td>";
+					table +="<a href=delete?id=" + cartItem.getProductID() + ">Remove from Cart</a>";
+				table +="</td>";
+				table +="</tr>";
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		table += "</table>";
+
+		
+		return table;
+	}
+	
+	
 	
 	public String getCustomerTable() {
 		String table = "";

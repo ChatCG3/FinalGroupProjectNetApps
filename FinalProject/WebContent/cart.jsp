@@ -13,39 +13,21 @@ String table = (String) request.getAttribute("table");
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="styles.css" type="text/css">
-<title>Shop Products</title>
+<title>Cart</title>
 </head>
 <body>
 
-<h1>Shop Products</h1>
+<h1>Cart</h1>
 
 <%= table %>
 <br />
-
-
-	<form class="form" action="CartController" method="get" name="viewCart">
-		<p>
-			<input class="submit" type="submit" name="cart" value="View Cart" />
-		</p>
-	</form>
+<p>
+	<a href="read">Return to products</a>
+</p>
 
 <p>
 	<a href="index.jsp">Return home</a>
 </p>
-
-
-
-
-
-
-
-
-<%-- <%= welcome %> --%>
-<!-- <br /> -->
-
-<%-- <%= table %> --%>
-<!-- <br /> -->
-<!-- <a href="add">Add a product</a> -->
 
 <a href="index.jsp">Return to Home</a>
 

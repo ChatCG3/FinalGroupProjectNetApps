@@ -7,22 +7,20 @@ package model;
 public class Product {
 	
 	private int productID;
-	private String color;
-	private int numInStock;
 	private String description;
-	private int imageID;
-	private String size;
+	private String imageID;
+	private double price;
+	private String code;
 	
 	/**
 	 * default constructor
 	 */
 	public Product() {
 		this.productID = 1234;
-		this.color = "";
-		this.numInStock = 0;
 		this.description = "";
-		this.imageID = 0;
-		this.size = "";
+		this.imageID = "";
+		this.price = 0.0;
+		this.code = "";
 	}
 
 	/**
@@ -33,13 +31,40 @@ public class Product {
 	 * @param imageID
 	 * @param size
 	 */
-	public Product(int productID, String color, int numInStock, String description, int imageID, String size) {
+	public Product(int productID, String description, String imageID, double price, String code) {
 		this.productID = productID;
-		this.color = color;
-		this.numInStock = numInStock;
 		this.description = description;
 		this.imageID = imageID;
-		this.size = size;
+		this.price = price;
+		this.code = code;
+	}
+
+	/**
+	 * @return the code
+	 */
+	public String getCode() {
+		return code;
+	}
+
+	/**
+	 * @param code the code to set
+	 */
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	/**
+	 * @return the price
+	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * @param price the price to set
+	 */
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	/**
@@ -54,34 +79,6 @@ public class Product {
 	 */
 	public void setProductID(int productID) {
 		this.productID = productID;
-	}
-
-	/**
-	 * @return the color
-	 */
-	public String getColor() {
-		return color;
-	}
-
-	/**
-	 * @param color the color to set
-	 */
-	public void setColor(String color) {
-		this.color = color;
-	}
-
-	/**
-	 * @return the numInStock
-	 */
-	public int getNumInStock() {
-		return numInStock;
-	}
-
-	/**
-	 * @param numInStock the numInStock to set
-	 */
-	public void setNumInStock(int numInStock) {
-		this.numInStock = numInStock;
 	}
 
 	/**
@@ -101,29 +98,15 @@ public class Product {
 	/**
 	 * @return the imageID
 	 */
-	public int getImageID() {
+	public String getImageID() {
 		return imageID;
 	}
 
 	/**
 	 * @param imageID the imageID to set
 	 */
-	public void setImageID(int imageID) {
+	public void setImageID(String imageID) {
 		this.imageID = imageID;
-	}
-
-	/**
-	 * @return the size
-	 */
-	public String getSize() {
-		return size;
-	}
-
-	/**
-	 * @param size the size to set
-	 */
-	public void setSize(String size) {
-		this.size = size;
 	}
 
 	/* (non-Javadoc)
@@ -131,9 +114,13 @@ public class Product {
 	 */
 	@Override
 	public String toString() {
-		return "Product [productID=" + productID + ", color=" + color + ", numInStock=" + numInStock + ", description="
-				+ description + ", imageID=" + imageID + ", size=" + size + "]";
+		return "Product [productID=" + productID + ", description=" + description + ", imageID=" + imageID + ", price="
+				+ price + ", code=" + code + "]";
 	}
+
+	/**
+	 * @return the size
+	 */
 	
 	
 	
