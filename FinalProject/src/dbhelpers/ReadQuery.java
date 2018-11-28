@@ -137,7 +137,7 @@ public class ReadQuery {
 				table +=product.getDescription();
 				table +="</td>";
 				table +="<td>";
-				table +="<img src= 'images/" + product.getImageID() + " 'width='450' height='250' />";
+				table +=product.getImageID();
 				table +="</td>";
 				table +="<td>";
 				table +=product.getPrice();
@@ -146,7 +146,7 @@ public class ReadQuery {
 				table +=product.getCode();
 				table +="</td>";
 				table +="<td>";
-					table +="<a href=addToCart?productID=" + product.getProductID() + ">Add to Cart</a>";
+					table +="<a href=add?productID=" + product.getProductID() + ">Add to Cart</a>";
 				table +="</td>";
 				table +="</tr>";
 				
