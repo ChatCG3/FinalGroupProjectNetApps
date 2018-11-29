@@ -11,7 +11,7 @@
 
 <h1>Add to Cart</h1>
 
-	<form class="form" action="addCart" method="get" name="addToCartForm">
+	<form class="form" action="addCart" method="post" name="addToCartForm">
 
 		<ul>
 			<li>
