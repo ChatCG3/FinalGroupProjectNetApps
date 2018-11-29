@@ -40,11 +40,6 @@
 			</li>
 			
 			<li>
-				<label for="code">Code:</label> 
-				<input type="text" name="code" placeholder="Enter Code" required />
-			</li>
-
-			<li>
 				<label for="quantity">Quantity:</label> 
 				<input type="number" name="quantity" placeholder="Enter Quantity" required />
 			</li>

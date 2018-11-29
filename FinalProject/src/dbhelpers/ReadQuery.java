@@ -79,7 +79,6 @@ public class ReadQuery {
 				product.setDescription(this.results.getString("description"));
 				product.setImageID(this.results.getString("imageID"));
 				product.setPrice(this.results.getDouble("price"));
-				product.setCode(this.results.getString("code"));
 
 
 				
@@ -95,9 +94,6 @@ public class ReadQuery {
 				table +="</td>";
 				table +="<td>";
 				table +=product.getPrice();
-				table +="</td>";
-				table +="<td>";
-				table +=product.getCode();
 				table +="</td>";
 				table +="<td>";
 				table +="<a href=update?productID=" + product.getProductID() + ">add to cart</a>";
@@ -127,9 +123,6 @@ public class ReadQuery {
 				cartItem.setDescription(this.results.getString("description"));
 				cartItem.setImageID(this.results.getString("imageID"));
 				cartItem.setPrice(this.results.getDouble("price"));
-				cartItem.setCode(this.results.getString("code"));
-
-
 				
 				table +="<tr>";
 				table +="<td>";
@@ -143,9 +136,6 @@ public class ReadQuery {
 				table +="</td>";
 				table +="<td>";
 				table +=cartItem.getPrice();
-				table +="</td>";
-				table +="<td>";
-				table +=cartItem.getCode();
 				table +="</td>";
 				table +="<td>";
 					table +="<a href=delete?productID=" + cartItem.getProductID() + ">Remove from Cart</a>";

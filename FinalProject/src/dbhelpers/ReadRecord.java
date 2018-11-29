@@ -49,7 +49,6 @@ public class ReadRecord {
 			product.setDescription(this.results.getString("description"));
 			product.setImageID(this.results.getString("imageID"));
 			product.setPrice(this.results.getDouble("price"));
-			product.setCode(this.results.getString("code"));
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

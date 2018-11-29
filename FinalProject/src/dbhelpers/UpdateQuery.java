@@ -26,7 +26,7 @@ public class UpdateQuery {
 	}
 	
 	public void doUpdate(CartItem cartItem) {
-		String query = "insert into cart (productID, description, imageID, price, code, quantity) values (?, ?, ?, ?, ?, ?)";
+		String query = "insert into cart (productID, description, imageID, price, quantity) values (?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
@@ -35,7 +35,6 @@ public class UpdateQuery {
 			ps.setString(2, cartItem.getDescription());
 			ps.setString(3, cartItem.getImageID());
 			ps.setDouble(4, cartItem.getPrice());
-			ps.setString(5, cartItem.getCode());
 			ps.setDouble(6, cartItem.getQuantity());
 			
 

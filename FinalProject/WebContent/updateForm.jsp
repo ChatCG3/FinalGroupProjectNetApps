@@ -59,14 +59,6 @@
 			
 			<li>
 				<label>
-					Code:
-				</label>
-				<input type=text name=code value="<%= product.getCode() %>" />
-				<br />
-			</li>
-			
-			<li>
-				<label>
 					Quantity:
 				</label>
 				<input type=text name=quantity value="" />

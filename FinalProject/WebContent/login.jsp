@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" media="screen" href="styles.css">
+<link rel="stylesheet" href="style.css" type="text/css">
 <title>Login Form</title>
 </head>
 <body>
@@ -38,39 +38,53 @@
 		   		</ul>    
 		    </td>
 		</tr>
-	</table>
-	
-	<h1></h1>
-
-	<form class="form" action="Login" method="post" name="loginForm">
-	
-		<ul>
-			<li>
-				<h2>Login</h2>
-				<span class="required_notification">* Denotes Required Field</span>
-			</li>
+		<tr>
+			<td id="left">
+			</td>
 			
-			<li>
-				<label for="username">Username:</label>
-				<input type="text" name="username" placeholder="Enter Username" required />
-			</li>
-			
-			<li>
-				<label for="password">Password:</label>
-				<input type="password" name="password" placeholder ="Enter Password" required />
-			</li>
-			
-			<li>
-				<input class="submit" type="submit" name="Login" value="Login" />
-				${errorMessage}
-			</li>
+			<td id="content">
+				<table cellspacing="1" cellpadding="1" width="100%" border="0">
+				    <tbody>
+				        <tr>
+				            <td bgcolor="#c0cdd2">
+				            	<p>
+									<h1></h1>
+								
+									<form class="form" action="Login" method="post" name="loginForm">
+									
+										<ul>
+											<li>
+												<h2>Login</h2>
+												<span class="required_notification">* Denotes Required Field</span>
+											</li>
+											
+											<li>
+												<label for="username">Username:</label>
+												<input type="text" name="username" placeholder="Enter Username" required />
+											</li>
+											
+											<li>
+												<label for="password">Password:</label>
+												<input type="password" name="password" placeholder ="Enter Password" required />
+											</li>
+											
+											<li>
+												<input class="submit" type="submit" name="Login" value="Login" />
+												${errorMessage}
+											</li>
+										</ul>
+													
+													
+									</form>
 
-		</ul>
-					
-					
-	</form>
-
-<a href="index.jsp">Return to Home</a>
+									<a href="index.jsp">Return to Home</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</table>
 
 </body>
 </html>
