@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <title>Login Form</title>
 </head>
-<body>
+<body><center>
 	<table cellspacing="0" cellpadding="0" id="main">
 		<tr>
 		    <td colspan="3">

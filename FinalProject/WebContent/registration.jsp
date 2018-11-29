@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 <title>Registration</title>
 </head>
-<body class="body">
+<body><center>
 
 	<table cellspacing="0" cellpadding="0" id="main">
 		<tr>
