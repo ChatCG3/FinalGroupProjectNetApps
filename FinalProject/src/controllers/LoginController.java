@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import dbhelpers.CustomerHelper;
 import model.Customer;
+import utilities.PasswordService;
 
 
 /**
@@ -76,11 +77,16 @@ public class LoginController extends HttpServlet {
 			String password = request.getParameter("password");
 
 			//encrypt the password to check against what's stored in DB
+			PasswordService pws = new PasswordService();
+			String encryptedPass = pws.encrypt(password);
 			
 			//create a user helper class to make database calls, and call authenticate user method
 			// Create a ReadQuery helper object
-			CustomerHelper ch = new CustomerHelper("naproject", "root", "toortoor");
-			Customer customer = ch.authenticateCustomer(username, password);
+			String dbname = "naproject";
+			String uname = "root";
+			String pwd = "toortoor";
+			CustomerHelper ch = new CustomerHelper(dbname, uname, pwd);
+			Customer customer = ch.authenticateCustomer(username, encryptedPass);
 
 			//we've found a user that matches the credentials
 			if(customer != null){

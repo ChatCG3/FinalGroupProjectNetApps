@@ -50,8 +50,8 @@
 				            	<p>
 									<h1></h1>
 								
-									<form class="form" action="Login" method="post" name="loginForm">
-									
+									<form class="form" id="loginForm" action="Login" method="post" name="loginForm">
+									 
 										<ul>
 											<li>
 												<h2>Login</h2>
@@ -86,6 +86,5 @@
 			</tr>
 		</table>
 
->>>>>>> branch 'master' of https://github.com/greencody89/FinalGroupProjectNetApps
 </body>
 </html>

@@ -7,11 +7,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.Customer;
+import model.Product;
 
 /**
  * This class is used to insert, retrieve, and update users in the user table.
  */
 public class CustomerHelper {
+	
+	private Connection connection;
+	private ResultSet results;
+	
+	private Customer customer = new Customer();
+	private int id;
 	
 	/**
 	 * Prepared SQL statement (combats: SQL Injections)
@@ -21,28 +28,20 @@ public class CustomerHelper {
 	/**
 	 * Constructor which makes a connection
 	 */
-	public CustomerHelper(String dbName, String uname, String pwd) {
-		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-
+	public CustomerHelper(String dbName, String uname, String pwd){
 		
-		// set up the driver
+		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		this.id = id;
+		
 		try {
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			//Set up connection
+			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(url, uname, pwd);
+			
+			//Create the preparedstatement(s)
 			authenticateCustomerStatement = conn.prepareStatement("select * from customers where username=? and password=?");
-
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (Exception e) {
+			System.out.println(e.getClass().getName() + ": " + e.getMessage());
 		}
 	}
 	
