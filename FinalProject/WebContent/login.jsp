@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" media="screen" href="styles.css" type="media_type">
+<link rel="stylesheet" media="screen" href="styles.css">
 <title>Login Form</title>
 </head>
 <body>
@@ -38,19 +38,39 @@
 		   		</ul>    
 		    </td>
 		</tr>
-		<tr class="loginform">
-		    <td id="left">
-			</td>
-			<td>
-				<form class="form" action="Login" method="post">
-					<h1>Log In</h1>
-					<input type="text" name="username" placeholder="Username" required><br>
-					<input type="password" name="password" placeholder ="Password" required><br>
-					<input type="submit" value="Login"><br>
-					${errorMessage}
-				</form>
-			</td>
-		</tr>
 	</table>
+	
+	<h1></h1>
+
+	<form class="form" action="Login" method="post" name="loginForm">
+	
+		<ul>
+			<li>
+				<h2>Login</h2>
+				<span class="required_notification">* Denotes Required Field</span>
+			</li>
+			
+			<li>
+				<label for="username">Username:</label>
+				<input type="text" name="username" placeholder="Enter Username" required />
+			</li>
+			
+			<li>
+				<label for="password">Password:</label>
+				<input type="password" name="password" placeholder ="Enter Password" required />
+			</li>
+			
+			<li>
+				<input class="submit" type="submit" name="Login" value="Login" />
+				${errorMessage}
+			</li>
+
+		</ul>
+					
+					
+	</form>
+
+<a href="index.jsp">Return to Home</a>
+
 </body>
 </html>

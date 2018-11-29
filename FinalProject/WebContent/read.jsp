@@ -10,10 +10,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="styles.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
 <title>Shop Products</title>
 </head>
-<body>enter>
+<body>
 
 	<table cellspacing="0" cellpadding="0" id="main">
 		<tr>
@@ -49,32 +49,28 @@
 			</td>
 			
 			<td id="content">
-				<p>
-					<h1>Shop Products</h1>
-			</td>
-			<td>
-				<p>
-					<%= table %>
-				</p>
-				<br />
-			</td>
+				<table cellspacing="1" cellpadding="1" width="100%" border="0">
+				    <tbody>
+				        <tr>
+				            <td bgcolor="#c0cdd2">
+				            	<p>
+				            		<h1>Shop Products</h1>
+
+									<%= table %>
+									
+									<form class="form" action="CartController" method="get" name="viewCart">
+										<p>
+											<input class="submit" type="submit" name="cart" value="View Cart" />
+										</p>
+									</form>
 			
-			<td>
-				<form class="form" action="CartController" method="get" name="viewCart">
-					<p>
-						<input class="submit" type="submit" name="cart" value="View Cart" />
-					</p>
-				</form>
-				
-				<p>
-					<a href="index.jsp">Return home</a>
-				</p>
-			</td>
-			
-			<td>
-				<a href="index.jsp">Return to Home</a>
-			</td>
-		</tr>
+									<a href="index.jsp">Return to Home</a>
+				            	<p></p>
+				            </td>
+				        </tr>
+				     </tbody>
+				</table>
+		 </tr>
 	</table>
 
 </body>
