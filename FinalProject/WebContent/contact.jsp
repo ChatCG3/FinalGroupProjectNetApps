@@ -8,7 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="style.css" type="text/css">
-<link rel="stylesheet" href="style.css" type="text/css">
 <title>Login Form</title>
 </head>
 <body><center>
