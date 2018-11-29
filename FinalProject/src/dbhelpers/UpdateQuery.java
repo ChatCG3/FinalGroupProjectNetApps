@@ -3,6 +3,7 @@ package dbhelpers;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.*;
@@ -10,6 +11,8 @@ import model.*;
 public class UpdateQuery {
 	
 	private Connection connection;
+	private ResultSet results;
+
 	
 	public UpdateQuery(String dbName, String uname, String pwd) {
 		
@@ -35,7 +38,7 @@ public class UpdateQuery {
 			ps.setString(2, cartItem.getDescription());
 			ps.setString(3, cartItem.getImageID());
 			ps.setDouble(4, cartItem.getPrice());
-			ps.setDouble(6, cartItem.getQuantity());
+			ps.setDouble(5, cartItem.getQuantity());
 			
 
 			

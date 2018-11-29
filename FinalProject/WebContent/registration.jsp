@@ -4,50 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<<<<<<< HEAD
-    <link rel="stylesheet" media="screen" href="styles.css" >
 <link rel="stylesheet" href="style.css" type="text/css">
-<title>Login Form</title>
-=======
-    <link rel="stylesheet" href="style.css" type="text/css">
 <title>Registration</title>
->>>>>>> branch 'master' of https://github.com/greencody89/FinalGroupProjectNetApps
 </head>
 <body><center>
-<<<<<<< HEAD
-	<table cellspacing="0" cellpadding="0" id="main">
-	<tr>
-	    <td colspan="3">
-	        <table cellspacing="0" cellpadding="0" id="header">
-	        <tr>
-	            <td><a href="index.jsp" class="custom-logo-link" rel="home" itemprop="url">
-	            <img src="images/cropped-cropped-d2d-logo.jpg" align="left" height="150"></td></a>
-	               <td> <p align="right">  <br><font face="Times New Roman" size="6">&nbsp;&nbsp;&nbsp;&nbsp;
-	               D2Decoys</font><br><font face="Times New Roman" size="4">Registration</font> </p>
- </td>
-	   
-	<td width="20"> </td>
-	                    </tr>
-	        </table>
-	    </td>
-	</tr>
-	<tr>
-	    <td colspan="3" id="mainmenu"><ul class="mainmenu">
-	    <li><a href="read">Products</a></li>
-	    <li><a href="login.jsp">Login</a></li>
-	   	<li><a href="contact.jsp">Contact US</a></li>
-	    <li><a href="storeLocator.jsp">Find a Store</a></li>
-	    <ul></ul>
-	        </div>
-	    </ul></td>
-	</tr>
-	<tr class="loginform">
-	    <td id="left">
-	</td>
-<td>
-=======
->>>>>>> branch 'master' of https://github.com/greencody89/FinalGroupProjectNetApps
-
 	<table cellspacing="0" cellpadding="0" id="main">
 		<tr>
 		    <td colspan="3">
@@ -66,9 +26,9 @@
 		    </td>
 		</tr>
 		
-<<<<<<< HEAD
+
 	</form>
-=======
+
 		<tr >
 		    <td colspan="3" id="mainmenu">
 			    <ul class="mainmenu">
@@ -127,7 +87,6 @@
 			</td>
 		</tr>
 	</table>
->>>>>>> branch 'master' of https://github.com/greencody89/FinalGroupProjectNetApps
 
 
 </body>
