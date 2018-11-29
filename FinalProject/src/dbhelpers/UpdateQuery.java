@@ -7,25 +7,26 @@ import java.sql.SQLException;
 
 import model.*;
 
-public class AddCart {
+public class UpdateQuery {
 	
-	public Connection connection;
+	private Connection connection;
 	
-	public AddCart(String dbName, String uname, String pwd) {
+	public UpdateQuery(String dbName, String uname, String pwd) {
 		
 		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-
+		
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			this.connection = DriverManager.getConnection(url, uname, pwd);
+			
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
 	}
 	
-	public void doAdd(CartItem cartItem) {
-		String query = "insert into cart (productID, description, imageID, price, code, quantity, total) values (?, ?, ?, ?, ?, ?, ?)";
+	public void doUpdate(CartItem cartItem) {
+		String query = "insert into cart (productID, description, imageID, price, quantity) values (?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
@@ -34,9 +35,8 @@ public class AddCart {
 			ps.setString(2, cartItem.getDescription());
 			ps.setString(3, cartItem.getImageID());
 			ps.setDouble(4, cartItem.getPrice());
-			ps.setString(5, cartItem.getCode());
 			ps.setDouble(6, cartItem.getQuantity());
-			ps.setDouble(6, cartItem.getTotal());
+			
 
 			
 			ps.executeUpdate();

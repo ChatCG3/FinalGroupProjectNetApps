@@ -9,24 +9,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.Customer;
+import model.*;
 
-/**
- * @author codygreen
- *
- */
-public class ReadCustomerRecord {
+public class ReadRecord {
 	
 	private Connection connection;
 	private ResultSet results;
 	
-	private Customer customer = new Customer();
-	private String username;
+	private Product product = new Product();
+	private int productID;
 	
-	public ReadCustomerRecord(String dbName, String uname, String pwd, String username) {
+	public ReadRecord(String dbName, String uname, String pwd, int productID) {
 		
 		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-		this.username = username;
+		this.productID = productID;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -38,20 +34,21 @@ public class ReadCustomerRecord {
 	}
 	
 	public void doRead() {
-		String query = "select * from customers where username = ?";
+		String query = "select * from product where productID = ?";
 		
 		try {
 			PreparedStatement ps = connection.prepareStatement(query);
 			
-			ps.setString(1, this.username);
+			ps.setInt(1, this.productID);
 			
 			this.results = ps.executeQuery();
 			
 			this.results.next();
 			
-			customer.setId(this.results.getInt(1));
-			customer.setUsername(this.results.getString("username"));
-			customer.setPassword(this.results.getString("password"));
+			product.setProductID(this.results.getInt(1));
+			product.setDescription(this.results.getString("description"));
+			product.setImageID(this.results.getString("imageID"));
+			product.setPrice(this.results.getDouble("price"));
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -59,8 +56,8 @@ public class ReadCustomerRecord {
 		}
 	}
 	
-	public Customer getCustomer() {
-		return this.customer;
+	public Product getProduct() {
+		return this.product;
 	}
 
 }

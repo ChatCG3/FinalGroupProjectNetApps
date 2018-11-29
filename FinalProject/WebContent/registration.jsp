@@ -4,11 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
     <link rel="stylesheet" media="screen" href="styles.css" >
 <link rel="stylesheet" href="style.css" type="text/css">
 <title>Login Form</title>
+=======
+    <link rel="stylesheet" href="style.css" type="text/css">
+<title>Registration</title>
+>>>>>>> branch 'master' of https://github.com/greencody89/FinalGroupProjectNetApps
 </head>
 <body><center>
+<<<<<<< HEAD
 	<table cellspacing="0" cellpadding="0" id="main">
 	<tr>
 	    <td colspan="3">
@@ -39,35 +45,89 @@
 	    <td id="left">
 	</td>
 <td>
+=======
+>>>>>>> branch 'master' of https://github.com/greencody89/FinalGroupProjectNetApps
 
-
-<h1></h1>
-
-	<form class="form" action="validate" method="get" name="registrationForm">
-
-		<ul>
-			<li>
-				<h2>Registration</h2> 
-				<span class="required_notification">* Denotes Required Field</span>
-			</li>
-
-			<li>
-				<label for="username">Username:</label> 
-				<input type="text" name="username" placeholder="Enter Username" required />
-			</li>
-
-			<li>
-				<label for="password">Password:</label> 
-				<input type="password" name="password" placeholder="Enter Password" required /> 
-				<span class="form_hint">Must be greater than 8 characters long</span>
-			</li>
-
-			<li>
-				<input class="submit" type="submit" name="register" value="Register" />
-			</li>
-		</ul>
+	<table cellspacing="0" cellpadding="0" id="main">
+		<tr>
+		    <td colspan="3">
+		        <table cellspacing="0" cellpadding="0" id="header">
+			        <tr>
+			            <td><img src="images/cropped-cropped-d2d-logo.jpg" align="left" height="150"></td>
+			            
+			            <td> <p align="right">  <br><font face="Times New Roman" size="6">&nbsp;&nbsp;&nbsp;&nbsp;
+			               D2Decoys</font><br><font face="Times New Roman" size="4">Home</font> </p>
+		 				</td>
+		   
+						<td width="20"> 
+						</td>
+		      		</tr>
+		        </table>
+		    </td>
+		</tr>
 		
+<<<<<<< HEAD
 	</form>
+=======
+		<tr >
+		    <td colspan="3" id="mainmenu">
+			    <ul class="mainmenu">
+				    <li><a href="read">Products</a></li>
+				    <li><a href="register">Registration</a></li>
+				    <li><a href="login.jsp">Login</a></li>
+				    <li><a href="contact.jsp">Contact US</a></li>
+				    <li><a href="storeLocator.jsp">Find a Store</a></li>
+			    </ul>
+		    </td>
+		</tr>
+		<tr>
+	    	<td id="left">
+			</td>
+			
+			<td id="content">
+				<table cellspacing="1" cellpadding="1" width="100%" border="0">
+				    <tbody>
+				        <tr>
+				            <td bgcolor="#c0cdd2">
+				            	<p>
+									<h1></h1>
+									
+									<form class="form" action="validate" method="get" name="registrationForm">
+									
+										<ul>
+											<li>
+												<h2>Registration</h2> 
+												<span class="required_notification">* Denotes Required Field</span>
+											</li>
+								
+											<li>
+												<label for="username">Username:</label> 
+												<input type="text" name="username" placeholder="Enter Username" required />
+											</li>
+								
+											<li>
+												<label for="password">Password:</label> 
+												<input type="password" name="password" placeholder="Enter Password" required /> 
+												<span class="form_hint">Must be greater than 8 characters long</span>
+											</li>
+									
+											<li>
+												<input class="submit" type="submit" name="register" value="Register" />
+											</li>
+										</ul>									
+									</form>
+									
+									<a href="index.jsp">Return to Home</a>
+									
+								<p></p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</table>
+>>>>>>> branch 'master' of https://github.com/greencody89/FinalGroupProjectNetApps
 
 
 </body>

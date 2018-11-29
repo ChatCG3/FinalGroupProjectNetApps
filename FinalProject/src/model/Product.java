@@ -10,7 +10,6 @@ public class Product {
 	private String description;
 	private String imageID;
 	private double price;
-	private String code;
 	
 	/**
 	 * default constructor
@@ -20,53 +19,15 @@ public class Product {
 		this.description = "";
 		this.imageID = "";
 		this.price = 0.0;
-		this.code = "";
 	}
 
-	/**
-	 * @param productID
-	 * @param color
-	 * @param numInStock
-	 * @param description
-	 * @param imageID
-	 * @param size
-	 */
-	public Product(int productID, String description, String imageID, double price, String code) {
+	public Product(int productID, String description, String imageID, double price) {
 		this.productID = productID;
 		this.description = description;
 		this.imageID = imageID;
 		this.price = price;
-		this.code = code;
 	}
-
-	/**
-	 * @return the code
-	 */
-	public String getCode() {
-		return code;
-	}
-
-	/**
-	 * @param code the code to set
-	 */
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	/**
-	 * @return the price
-	 */
-	public double getPrice() {
-		return price;
-	}
-
-	/**
-	 * @param price the price to set
-	 */
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
+	
 	/**
 	 * @return the productID
 	 */
@@ -80,7 +41,7 @@ public class Product {
 	public void setProductID(int productID) {
 		this.productID = productID;
 	}
-
+	
 	/**
 	 * @return the description
 	 */
@@ -109,21 +70,31 @@ public class Product {
 		this.imageID = imageID;
 	}
 
+	/**
+	 * @return the price
+	 */
+	public double getPrice() {
+		return price;
+	}
+
+	/**
+	 * @param price the price to set
+	 */
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "Product [productID=" + productID + ", description=" + description + ", imageID=" + imageID + ", price="
-				+ price + ", code=" + code + "]";
+				+ price + "]";
 	}
 
-	/**
-	 * @return the size
-	 */
 	
-	
-	
+
 	
 }
 

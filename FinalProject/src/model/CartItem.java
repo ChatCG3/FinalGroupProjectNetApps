@@ -13,9 +13,7 @@ public class CartItem {
 	private String description;
 	private String imageID;
 	private double price;
-	private String code;
 	private double quantity;
-	private double total;
 	
 	/**
 	 * default constructor
@@ -25,10 +23,7 @@ public class CartItem {
 		this.description = "";
 		this.imageID = "";
 		this.price = 0.0;
-		this.code = "";
 		this.quantity = 0.0;
-		this.total = 0.0;
-
 	}
 
 	/**
@@ -40,14 +35,12 @@ public class CartItem {
 	 * @param size
 	 */
 	public CartItem(int productID, String description, String imageID, 
-			double price, String code, double quantity, double total) {
+			double price, double quantity) {
 		this.productID = productID;
 		this.description = description;
 		this.imageID = imageID;
 		this.price = price;
-		this.code = code;
 		this.quantity = quantity;
-		this.total = total;
 	}
 	
 	
@@ -107,20 +100,6 @@ public class CartItem {
 		this.price = price;
 	}
 
-	/**
-	 * @return the code
-	 */
-	public String getCode() {
-		return code;
-	}
-
-	/**
-	 * @param code the code to set
-	 */
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -132,17 +111,9 @@ public class CartItem {
         return quantity;
     }
 
-    public void setTotal(double total) {
-    	this.total = price * quantity;
-
-    }
-    public double getTotal() {
-        return total;
-    }
-
     public String getTotalCurrencyFormat() {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
-        return currency.format(this.getTotal());
+        return currency.format(this.price);
     }
 
 	/* (non-Javadoc)
@@ -151,8 +122,9 @@ public class CartItem {
 	@Override
 	public String toString() {
 		return "CartItem [productID=" + productID + ", description=" + description + ", imageID=" + imageID + ", price="
-				+ price + ", code=" + code + ", quantity=" + quantity + ", total=" + total + "]";
+				+ price + ", quantity=" + quantity + "]";
 	}
+
     
     
 
