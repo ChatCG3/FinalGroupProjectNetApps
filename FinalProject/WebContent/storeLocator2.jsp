@@ -30,6 +30,8 @@
 	    <li><a href="register">Registration</a></li>
 	    <li><a href="login.jsp">Login</a></li>
 	    <li><a href="contact.jsp">Contact US</a></li>
+	    <li><a href="storeLocator.jsp">Find a Store</a></li>
+	    
 	    <ul></ul>
 	        </div>
 	    </ul></td>
@@ -62,31 +64,16 @@
             <p align="center"><img src="images/Watkinsville2.jpg" width="900" height="474" alt="" /></p>
             </td>
         </tr>
-    <tr>
-    <td>
-    <h2> Alcovy Taxidermy</h2>
-    <h3> 4032 Sunset Ct, Covington, GA 30014</h3>
-    </td>
+        
+        
+        
+        
+       </tbody>
+      </table>
+     </td>
     </tr>
-        <tr>
-            <td bgcolor="#c0cdd2" colspan="2">
-            <p align="center"><img src="images/Alcovy.jpg" width="900" height="474" alt="" /></p>
-            </td>
-        </tr>
-          <tr>
-    <td>
-    <h2> Feather, Fin, and Fur Taxidermy and Red Barn Deer Processing </h2>
-    <h3> 4838 Atlanta Hwy 78, Loganville, GA 30052</h3>
-    </td>
-    </tr>
-        <tr>
-            <td bgcolor="#c0cdd2" colspan="2">
-            <p align="center"><img src="images/Processing.jpeg" width="900" height="474" alt="" /></p>
-            </td>
-        </tr>
-</tbody>
 </table>
 
 
 </body>
-</html></html>
+</html>

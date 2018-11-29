@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="style.css" type="text/css">
-<title>D2 Decoys Store Locater</title>
+<title>D2 Decoys Store Locator</title>
 </head>
 <body><center>
 	<table cellspacing="0" cellpadding="0" id="main">
@@ -24,28 +23,39 @@
 	        </table>
 	    </td>
 	</tr>
-	<tr>
-	    <td colspan="3" id="mainmenu">
-	    	<ul class="mainmenu">
-			    <li><a href="read">Products</a></li>
-			    <li><a href="register">Registration</a></li>
-			    <li><a href="login.jsp">Login</a></li>
-			    <li><a href="contact.jsp">Contact US</a></li>
-	    		<li><a href="storeLocator.jsp">Find a Store</a></li>
-	    	</ul>
-	    </td>
-	  </tr>
+	<tr >
+	    <td colspan="3" id="mainmenu"><ul class="mainmenu">
+	    <li><a href="read">Products</a></li>
+	    <li><a href="register">Registration</a></li>
+	    <li><a href="login.jsp">Login</a></li>
+	    <li><a href="contact.jsp">Contact US</a></li>
+	    <li><a href="storeLocator.jsp">Find a Store</a></li>
+	    <ul></ul>
+	        </div>
+	    </ul></td>
+	</tr>
 	<tr>
 	    <td id="left">
 	</td>
 	<td id="content">
+<table cellspacing="1" cellpadding="1" width="100%" border="0">
+    <tbody>
+    <tr>
+    <td>
+    <tr>
+    <td>
+    <h2> Alcovy Taxidermy</h2>
+    <h3> 4032 Sunset Ct, Covington, GA 30014</h3>
+    </td>
+    </tr>
+        <tr>
+            <td bgcolor="#c0cdd2" colspan="2">
+            <p align="center"><img src="images/Alcovy.jpg" width="900" height="474" alt="" /></p>
+            </td>
+        </tr>
+</tbody>
+</table>
 
-<form class="form" id="locatorForm" action=locate method="get">
-	<h1>Store Locator</h1>
-	<input type="text" name="zipCode" placeholder="ZipCode" required><br>
-	<input class="submit" type="submit" value="Submit"><br>
-	
-</form>
 
 </body>
-</html></html>
+</html>
