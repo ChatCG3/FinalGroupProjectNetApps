@@ -86,7 +86,7 @@ public class LoginController extends HttpServlet {
 			String uname = "root";
 			String pwd = "toortoor";
 			CustomerHelper ch = new CustomerHelper(dbname, uname, pwd);
-			Customer customer = ch.authenticateCustomer(username, encryptedPass);
+			Customer customer = ch.authenticateCustomer(username, password);
 
 			//we've found a user that matches the credentials
 			if(customer != null){
