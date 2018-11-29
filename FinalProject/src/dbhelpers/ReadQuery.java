@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.*;
-import controllers.*;
 
 
 
@@ -20,9 +19,7 @@ public class ReadQuery {
 	private Connection connection;
 	private ResultSet results;
 	
-	private Product product = new Product();
-	private String code;
-	
+
 	public ReadQuery(String dbName, String uname, String pwd) {
 		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 		
@@ -151,7 +148,7 @@ public class ReadQuery {
 				table +=cartItem.getCode();
 				table +="</td>";
 				table +="<td>";
-					table +="<a href=delete?id=" + cartItem.getProductID() + ">Remove from Cart</a>";
+					table +="<a href=delete?productID=" + cartItem.getProductID() + ">Remove from Cart</a>";
 				table +="</td>";
 				table +="</tr>";
 				

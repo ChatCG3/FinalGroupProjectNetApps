@@ -9,24 +9,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dbhelpers.*;
-import model.*;
+import dbhelpers.DeleteQuery;
 
 /**
- * Servlet implementation class AddCartServlet
+ * Servlet implementation class DeleteServlet
  */
-@WebServlet({ "/AddCartServlet", "/addCart" })
-public class AddCartServlet extends HttpServlet {
+@WebServlet(
+		description = "Controller for removing items from cart", 
+		urlPatterns = { 
+				"/DeleteServlet", 
+				"/delete"
+		})
+public class DeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddCartServlet() {
+    public DeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
@@ -35,36 +42,20 @@ public class AddCartServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// get the data
+		// get the bookID
 		int productID = Integer.parseInt(request.getParameter("productID"));
-		String description = request.getParameter("description");
-		String imageID = request.getParameter("imageID");
-		double price = Double.parseDouble(request.getParameter("price"));
-		double quantity = Double.parseDouble(request.getParameter("quantity"));
 		
-		 
+		// create a deleteQuery object
+		DeleteQuery dq = new DeleteQuery("naproject", "root", "toortoor");
 		
-		// set up a book object
-		CartItem cartItem = new CartItem();
-		cartItem.setProductID(productID);
-		cartItem.setDescription(description);
-		cartItem.setImageID(imageID);
-		cartItem.setPrice(price);
-		cartItem.setQuantity(quantity);
-
+		// use deleteQuery to delete the record
+		dq.doDelete(productID);
 		
-		// set up an addQuery object
-		AddCart ac = new AddCart("naproject", "root", "toortoor");
-		
-		// pass the book to addQuery to add to the database
-		ac.doAdd(cartItem);
-		
-		// pass execution control to the ReadServlet
+		// pass execution on to the CartController
 		String url = "/CartController";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
 	}
 
 }

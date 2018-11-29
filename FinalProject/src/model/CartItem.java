@@ -133,16 +133,17 @@ public class CartItem {
     }
 
     public void setTotal(double total) {
-    	this.total = price * quantity;
+    	this.total = total;
 
     }
-    public double getTotal() {
-        return total;
+    public double getTotal(double price, double quantity) {
+        this.total = price * quantity;
+    	return total;
     }
 
     public String getTotalCurrencyFormat() {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
-        return currency.format(this.getTotal());
+        return currency.format(this.total);
     }
 
 	/* (non-Javadoc)
