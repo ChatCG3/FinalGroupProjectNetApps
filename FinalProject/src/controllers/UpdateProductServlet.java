@@ -9,33 +9,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dbhelpers.*;
+import dbhelpers.UpdateQuery;
 import model.*;
 
 /**
- * Servlet implementation class AddCartServlet
+ * Servlet implementation class UpdateProductServlet
  */
-@WebServlet({ "/AddCartServlet", "/addCart" })
-public class AddCartServlet extends HttpServlet {
+@WebServlet("/updateProduct")
+public class UpdateProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddCartServlet() {
+    public UpdateProductServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		this.doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// get the data
 		int productID = Integer.parseInt(request.getParameter("productID"));
 		String description = request.getParameter("description");
 		String imageID = request.getParameter("imageID");
@@ -43,28 +45,23 @@ public class AddCartServlet extends HttpServlet {
 		double quantity = Double.parseDouble(request.getParameter("quantity"));
 		
 		 
-		
-		// set up a book object
+		// set up a CartItem object
 		CartItem cartItem = new CartItem();
 		cartItem.setProductID(productID);
 		cartItem.setDescription(description);
 		cartItem.setImageID(imageID);
 		cartItem.setPrice(price);
 		cartItem.setQuantity(quantity);
-
 		
-		// set up an addQuery object
-		AddCart ac = new AddCart("naproject", "root", "toortoor");
+		// create an UpdateQuery object and use it to update the book
+		UpdateQuery uq = new UpdateQuery("naproject", "root", "toortoor");
+		uq.doUpdate(cartItem);
 		
-		// pass the book to addQuery to add to the database
-		ac.doAdd(cartItem);
-		
-		// pass execution control to the ReadServlet
+		// pass control on to the ReadServlet
 		String url = "/CartController";
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
 	}
 
 }
