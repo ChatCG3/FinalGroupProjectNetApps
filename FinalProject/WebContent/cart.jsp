@@ -29,8 +29,6 @@ String table = (String) request.getAttribute("table");
 	<a href="index.jsp">Return home</a>
 </p>
 
-<a href="index.jsp">Return to Home</a>
-
 
 
 </body>
