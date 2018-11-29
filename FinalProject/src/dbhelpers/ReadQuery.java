@@ -57,18 +57,6 @@ public class ReadQuery {
 		}
 	}
 	
-	public void doReadCustomer() {
-		String query = "select * from customers";
-		
-		try {
-			PreparedStatement ps = this.connection.prepareStatement(query);
-			this.results = ps.executeQuery();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 	public void doReadCart() {
 		String query = "select * from cart";
 		
@@ -81,38 +69,7 @@ public class ReadQuery {
 		}
 	}
 	
-	public Product doReadProductRecord(String code) {
-		
-		
-		String query = "select * from product where code= ?";
-		
-		try {
-			PreparedStatement ps = this.connection.prepareStatement(query);
-			
-			ps.setString(1, this.code);
-
-			
-			this.results = ps.executeQuery();
-			
-			this.results.next();
-			
-			product.setProductID(this.results.getInt("productID"));
-			product.setDescription(this.results.getString("description"));
-			product.setImageID(this.results.getString("imageID"));
-			product.setPrice(this.results.getDouble("price"));
-			product.setCode(this.results.getString("code"));
-
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return this.product;
-		
-		
-	}
-
+	
 	
 	public String getProductTable() {
 		String table = "";
@@ -195,43 +152,6 @@ public class ReadQuery {
 				table +="</td>";
 				table +="<td>";
 					table +="<a href=delete?id=" + cartItem.getProductID() + ">Remove from Cart</a>";
-				table +="</td>";
-				table +="</tr>";
-				
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		table += "</table>";
-
-		
-		return table;
-	}
-	
-	
-	
-	public String getCustomerTable() {
-		String table = "";
-		table += "<table border=1>";
-		
-		try {
-			while(this.results.next()) {
-				Customer customer = new Customer();
-				customer.setId(this.results.getInt("id"));
-				customer.setUsername(this.results.getString("username"));
-				customer.setPassword(this.results.getString("password"));
-				
-				table +="<tr>";
-				table +="<td>";
-				table +=customer.getUsername();
-				table +="</td>";
-				table +="<td>";
-				table +=customer.getPassword();
-				table +="</td>";
-				table +="<td>";
-					table +="<a href=update?id=" + customer.getId() + ">update</a> <a href=delete?id=" + customer.getId() + ">delete</a>";
 				table +="</td>";
 				table +="</tr>";
 				
