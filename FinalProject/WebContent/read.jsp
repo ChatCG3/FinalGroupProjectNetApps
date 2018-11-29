@@ -3,10 +3,8 @@
     
 
 <%
-String table = (String) request.getAttribute("table");
-
+	String table = (String) request.getAttribute("table");
 %>
-    
     
 <!DOCTYPE html>
 <html>
@@ -15,41 +13,69 @@ String table = (String) request.getAttribute("table");
 <link rel="stylesheet" href="styles.css" type="text/css">
 <title>Shop Products</title>
 </head>
-<body>
+<body>enter>
 
-<h1>Shop Products</h1>
-
-<%= table %>
-<br />
-
-
-	<form class="form" action="CartController" method="get" name="viewCart">
-		<p>
-			<input class="submit" type="submit" name="cart" value="View Cart" />
-		</p>
-	</form>
-
-<p>
-	<a href="index.jsp">Return home</a>
-</p>
-
-
-
-
-
-
-
-
-<%-- <%= welcome %> --%>
-<!-- <br /> -->
-
-<%-- <%= table %> --%>
-<!-- <br /> -->
-<!-- <a href="add">Add a product</a> -->
-
-<a href="index.jsp">Return to Home</a>
-
-
+	<table cellspacing="0" cellpadding="0" id="main">
+		<tr>
+		    <td colspan="3">
+		        <table cellspacing="0" cellpadding="0" id="header">
+			        <tr>
+			            <td><img src="images/cropped-cropped-d2d-logo.jpg" align="left" height="150"></td>
+			            
+			            <td> <p align="right">  <br><font face="Times New Roman" size="6">&nbsp;&nbsp;&nbsp;&nbsp;
+			               D2Decoys</font><br><font face="Times New Roman" size="4">Home</font> </p>
+		 				</td>
+		   
+						<td width="20"> 
+						</td>
+		      		</tr>
+		        </table>
+		    </td>
+		</tr>
+		
+		<tr >
+		    <td colspan="3" id="mainmenu">
+			    <ul class="mainmenu">
+				    <li><a href="read">Products</a></li>
+				    <li><a href="register">Registration</a></li>
+				    <li><a href="login.jsp">Login</a></li>
+				    <li><a href="contact.jsp">Contact US</a></li>
+				    <li><a href="storeLocator.jsp">Find a Store</a></li>
+			    </ul>
+		    </td>
+		</tr>
+		<tr>
+	    	<td id="left">
+			</td>
+			
+			<td id="content">
+				<p>
+					<h1>Shop Products</h1>
+			</td>
+			<td>
+				<p>
+					<%= table %>
+				</p>
+				<br />
+			</td>
+			
+			<td>
+				<form class="form" action="CartController" method="get" name="viewCart">
+					<p>
+						<input class="submit" type="submit" name="cart" value="View Cart" />
+					</p>
+				</form>
+				
+				<p>
+					<a href="index.jsp">Return home</a>
+				</p>
+			</td>
+			
+			<td>
+				<a href="index.jsp">Return to Home</a>
+			</td>
+		</tr>
+	</table>
 
 </body>
 </html>
