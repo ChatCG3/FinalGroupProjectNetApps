@@ -17,9 +17,7 @@ public class CustomerHelper {
 	 * Prepared SQL statement (combats: SQL Injections)
 	 */
 	private PreparedStatement authenticateCustomerStatement; 
-	
-	Customer customer = new Customer();
-	
+		
 	/**
 	 * Constructor which makes a connection
 	 */
