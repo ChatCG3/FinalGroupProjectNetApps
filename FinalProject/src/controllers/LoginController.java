@@ -70,7 +70,7 @@ public class LoginController extends HttpServlet {
 		if(loginAttempts > 2){
 			String errorMessage = "Error: Number of Login Attempts Exceeded";
 			request.setAttribute("errorMessage", errorMessage);
-			url = "index.jsp";
+			url = "login.jsp";
 		}else{	//proceed
 			//pull the fields from the form
 			String username = request.getParameter("username");
@@ -82,10 +82,7 @@ public class LoginController extends HttpServlet {
 			
 			//create a user helper class to make database calls, and call authenticate user method
 			// Create a ReadQuery helper object
-			String dbname = "naproject";
-			String uname = "root";
-			String pwd = "toortoor";
-			CustomerHelper ch = new CustomerHelper(dbname, uname, pwd);
+			CustomerHelper ch = new CustomerHelper("naproject", "root", "toortoor");
 			Customer customer = ch.authenticateCustomer(username, password);
 
 			//we've found a user that matches the credentials

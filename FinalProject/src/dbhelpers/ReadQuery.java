@@ -138,6 +138,9 @@ public class ReadQuery {
 				table +=cartItem.getPrice();
 				table +="</td>";
 				table +="<td>";
+				table +=cartItem.getQuantity();
+				table +="</td>";
+				table +="<td>";
 					table +="<a href=delete?productID=" + cartItem.getProductID() + ">Remove from Cart</a>";
 				table +="</td>";
 				table +="</tr>";

@@ -392,3 +392,9 @@ input:required, textarea:required {
 .form input:required:valid + .form_hint {background: #28921f;} /* change form hint color when valid */
 .form input:required:valid + .form_hint::before {color:#28921f;} /* change form hint arrow color when valid */
 
+/*  
+
+	CSS Influence and Source of some our our CSS code: http://www.mitchellinvestmentsathens.com/
+
+*/
+

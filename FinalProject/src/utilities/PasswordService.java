@@ -32,4 +32,10 @@ public final class PasswordService {
 		String hash = (new BASE64Encoder()).encode(raw);
 		return hash;
 	}
+	
+	public static void main(String[] args) {
+		PasswordService ps = new PasswordService();
+		System.out.println(ps.encrypt("password"));
+	}
+	
 }

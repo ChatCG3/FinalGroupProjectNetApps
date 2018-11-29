@@ -29,9 +29,8 @@ public class CustomerHelper {
 	 * Constructor which makes a connection
 	 */
 	public CustomerHelper(String dbName, String uname, String pwd){
-		
 		String url = "jdbc:mysql://localhost:3306/" + dbName + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-		this.id = id;
+
 		
 		try {
 			//Set up connection
