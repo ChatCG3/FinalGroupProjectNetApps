@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.*;
-
+import controllers.*;
 
 
 
@@ -146,7 +146,7 @@ public class ReadQuery {
 				table +=product.getCode();
 				table +="</td>";
 				table +="<td>";
-					table +="<a href=add?productID=" + product.getProductID() + ">Add to Cart</a>";
+				table +="<a href=cart?id=" + product.getProductID() + ">Add to Cart</a>";
 				table +="</td>";
 				table +="</tr>";
 				
